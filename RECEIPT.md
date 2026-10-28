@@ -11,6 +11,19 @@ Build status (2026-10-28)
 - Draft metadata fix: `index.html` commit `bb3faf7ec6c5d250deb0cb5cd2d8e9b7a533282f` removed unverified LocalBusiness JSON-LD, placeholder canonical/social URLs, and an uncreated OG image reference. Kept `noindex,nofollow`, hero graphics, smoke and booking dialog. Production `main` was not changed.
 - Live `main` page still shows bracketed placeholders. Rollback target not confirmed. Owner decision: keep, roll back, or take down.
 
+## Live browser verification (2026-10-28)
+
+Target: deployed Cloudflare Worker at the `bleeding-ink` workers.dev subdomain. This verifies live production behavior, not that the draft-branch code was deployed.
+
+- Cloudflare headless browser rendering at 390×844 (mobile) and 1280×800 (desktop): page and hero loaded; all fragment-navigation targets existed.
+- At both widths: navigation control opened and closed when activated; booking placeholder opened the configured dialog and its dismissal closed it; selecting Violet set `aria-pressed=true` and updated the tone label.
+- Four live images decoded at both viewport sizes: `/assets/skeleton-machine-cutout.webp`, `/img/key-visual.jpg`, `/assets/sign-detail.webp`, and `/img/baskets.jpg`. Their image natural widths were nonzero.
+- No horizontal document overflow at either viewport and no captured script errors during the tested interactions.
+- The live page still contains `https://[domain]/` canonical metadata and placeholder business JSON-LD. These were corrected **only in draft PR #3**, not production.
+- Playwright Chromium was launched locally and a live navigation was attempted; `Page.goto` was blocked by the sandbox network policy (`net::ERR_BLOCKED_BY_ADMINISTRATOR`). Therefore **no live-site Playwright pass is claimed**. Test execution in a network-authorized Playwright runner remains required for a Playwright-specific gate.
+- Release remains held pending owner-confirmed address, artist details/consent, booking URL, rights, reviews/listing policy, and a verified public launch decision.
+
+
 Decided
 - Static HTML over a React artifact bundle, for crawlability by search and AI engines.
 - Black hero. The skeleton-machine cutout (transparent) sits over live smoke, so smoke shows through the art and behind the glass cards.
