@@ -1,10 +1,17 @@
 {
-  // PREVIEW configuration only. Confirm the actual Cloudflare Worker name before production.
-  // In the Cloudflare Git build settings, use build command: npm run build
-  // The existing deploy command can then remain: npx wrangler deploy
-  "name": "bleeding-ink-review-preview",
-  "compatibility_date": "2026-10-28",
+  "name": "bleeding-ink",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-09-01",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": [
+      "17 13 * * *"
+    ]
   }
 }
