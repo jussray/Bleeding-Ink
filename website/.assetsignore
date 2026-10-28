@@ -1,0 +1,5 @@
+# Only public site files. Do not expose build code, studio.json, audit data, or tests.
+*
+!/index.html
+!/assets/
+!/assets/**
