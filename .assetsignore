@@ -1,6 +1,11 @@
-*.md
-wrangler.jsonc
-src
-.gitignore
-.assetsignore
-.git
+# Publish only approved browser-facing static assets.
+# This is a deny-by-default allowlist, so private receipts and config never ship.
+*
+!/index.html
+!/assets/
+!/assets/**
+!/img/
+!/img/**
+!/robots.txt
+!/sitemap.xml
+!/llms.txt
