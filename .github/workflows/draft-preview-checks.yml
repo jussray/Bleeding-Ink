@@ -1,0 +1,22 @@
+name: Bleeding Ink preview checks
+on:
+  pull_request:
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate prelaunch source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          page = Path('website/index.html').read_text(encoding='utf-8')
+          assert 'content="noindex,nofollow"' in page
+          assert 'application/ld+json' not in page
+          assert 'href=""' not in page
+          print('Prelaunch safety checks passed')
+          PY
+      - name: Required images must exist before merge
+        run: |
+          test -f website/assets/skeleton-hand.webp
+          test -f website/assets/sign-detail.webp
