@@ -6,8 +6,9 @@ Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no p
 
 Build status (2026-10-28)
 - Workers build 23bdbae8 (draft branch, commit 3165c5c) failed. Cause: the non-main build ran `npx wrangler preview`, and Wrangler stopped with "Your Wrangler configuration needs a `previews` block". The failed step was the preview deploy, so nothing was published.
-- The Worker's API shows one trigger, `main`, running `npx wrangler deploy`. The non-main setting is not visible through the API.
-- Fix not applied. Adding `previews: {}` would let preview builds deploy, against the decision to turn off non-main builds. Pending: turn off builds for non-main branches in the Cloudflare dashboard (owner action).
+- The live Worker's production trigger remains scoped to `main` with `npx wrangler deploy`; preview builds were enabled at audit start.
+- Fix applied on 2026-10-28: Cloudflare Worker-level Builds configuration `previews_enabled` changed from `true` to `false` using the supported API. Read-back confirmed `false`, with production branch `main` and deploy command unchanged. The historical failed preview builds remain historical; no new branch push has been used to prove trigger suppression.
+- Draft metadata fix: `index.html` commit `bb3faf7ec6c5d250deb0cb5cd2d8e9b7a533282f` removed unverified LocalBusiness JSON-LD, placeholder canonical/social URLs, and an uncreated OG image reference. Kept `noindex,nofollow`, hero graphics, smoke and booking dialog. Production `main` was not changed.
 - Live `main` page still shows bracketed placeholders. Rollback target not confirmed. Owner decision: keep, roll back, or take down.
 
 Decided
