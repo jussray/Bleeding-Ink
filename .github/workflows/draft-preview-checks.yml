@@ -1,22 +1,36 @@
 name: Bleeding Ink preview checks
 on:
   pull_request:
+  push:
+    branches: [main]
+
 jobs:
   preview:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run build and packaging regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Rebuild prelaunch website and compare committed output
+        run: |
+          python build.py --output /tmp/bleeding-ink-preview.html
+          cmp index.html /tmp/bleeding-ink-preview.html
       - name: Validate prelaunch source
         run: |
           python - <<'PY'
           from pathlib import Path
-          page = Path('website/index.html').read_text(encoding='utf-8')
+          page = Path('index.html').read_text(encoding='utf-8')
           assert 'content="noindex,nofollow"' in page
           assert 'application/ld+json' not in page
           assert 'href=""' not in page
           print('Prelaunch safety checks passed')
           PY
-      - name: Required images must exist before merge
+      - name: Generate offline listing audit
         run: |
-          test -f website/assets/skeleton-hand.webp
-          test -f website/assets/sign-detail.webp
+          python audit_listings.py --output /tmp/bleeding-ink-listing-audit.md
