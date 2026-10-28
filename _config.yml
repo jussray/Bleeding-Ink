@@ -6,4 +6,5 @@ exclude:
   - LAUNCH-GATE.md
   - wrangler.jsonc
   - src/
+  - website/
   - node_modules/
