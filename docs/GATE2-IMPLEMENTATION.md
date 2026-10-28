@@ -12,9 +12,9 @@
 ## Cloudflare build preparation — not a deployment
 
 `npm run build` stages only the explicitly allowed static website content under `dist/`.
-`wrangler.jsonc` points Workers Static Assets to `./dist`.
+`wrangler.jsonc` now targets the existing **`bleeding-ink` Worker** with `src/worker.js`, the `ASSETS` binding, daily `17 13 * * *` cron schedule, observability enabled, and Workers Static Assets staged at `./dist`.
 The Cloudflare Git settings must run **build command `npm run build`** before the existing **deploy command `npx wrangler deploy`**; otherwise `dist/` will be missing.
-The Workers project name in the draft config is a **placeholder preview name**. Confirm it with the account owner before enabling any deployment.
+The Worker name and handler were taken from the already-existing architecture in draft PR #3. This approval covers **branch configuration only**; actual Cloudflare build settings, Worker identity in the linked account, and deploy effects still require explicit owner verification and a separate deployment approval.
 
 Do not deploy until owner facts and public listing/review links are verified and a separate release approval is given. The current site remains `noindex`.
 
@@ -30,8 +30,8 @@ Code checks establish structural properties, not a pixel-perfect iPhone Safari r
 
 - **Worker build 23bdbae8**, commit `aafa6c1d9d9d46f19800105732c3e44482fe921e` is a **receipt commit about the failure**, not the failed deployment itself. The receipt says `npx wrangler preview` failed because Wrangler needed a `previews` block. The failed build's underlying commit was `3165c5c`. This is user/repository-reported evidence, not a fresh reproduction.
 - **Later PR #3 receipt** states that the Worker-level `previews_enabled` setting was changed to `false` and read back as `false`. This is a recorded claim in GitHub, **not independently verified in the current Cloudflare account**. Historical failed builds cannot be turned into passing historical runs by changing configuration.
-- **Earlier production build** ran `npx wrangler deploy` without finding a directory of static files. Two incompatible proposals now exist: PR #3 uses the existing `bleeding-ink` Worker with `src/worker.js`, asset binding and cron, serving from repository root; PR #4 uses a different preview Worker name with compiled `dist/` assets and no Worker handler. **No unified architecture is approved or tested.**
-- **Decision required before merging any deployment config:** choose whether to preserve the existing Worker, its scheduled handler, and observability (PR #3 direction), or use static-assets-only deployment; confirm the account, Worker name, build command, Git trigger/preview setting and public deployment policy. Do not merge configurations together or deploy without new approval.
+- **Earlier production build** ran `npx wrangler deploy` without finding a directory of static files. At the time of the original audit, PR #3 served `bleeding-ink` from the repository root with a Worker handler, while PR #4 proposed a different preview Worker with `dist/` assets. **Superseded on the feature branch by owner approval:** PR #4 now keeps PR #3's Worker name, exact handler, `ASSETS` binding, cron, and observability, while serving only the staged `dist/` directory. Production behavior has not been tested.
+- **Architecture selected for draft PR #4:** preserve the existing Worker, handler, scheduled heartbeat, and observability; stage static assets under `dist/`. **Still blocked before merging:** reconcile PR #3's different asset-directory configuration and its metadata cleanup; verify the Cloudflare account/build command and preview trigger; secure separate approval for merge and deployment.
 
 ## Important source divergence — schema remains deferred
 
@@ -40,3 +40,20 @@ PR #3's newer draft `index.html` removed unverified JSON-LD and placeholder cano
 ## Added validation
 
 The local build's required-file gate now covers `img/key-visual.jpg` and `img/baskets.jpg`, which were referenced by the page but missing from the previous required list. A repository test was authored for this invariant. Its code is committed; its execution on a fresh GitHub checkout and its Cloudflare behavior remain unverified.
+
+## Worker architecture update — approved on feature branch, not deployed
+
+**Source:** PR #3's `wrangler.jsonc` and `src/worker.js` were inspected through GitHub. The feature branch now combines its original Worker runtime with the static-asset staging approach:
+
+| Property | Feature branch value | Evidence |
+| --- | --- | --- |
+| Worker name | `bleeding-ink` | Matches PR #3 |
+| Entry point | `src/worker.js` | Byte-identical to PR #3 (Git blob `12bdca3e4a83d16a4e5545d929867b0d690f261b`) |
+| Binding | `ASSETS` | Matches PR #3 |
+| Cron | `17 13 * * *` | Matches PR #3 |
+| Observability | `enabled: true` | Matches PR #3 |
+| Public asset directory | `./dist` | Local allowlisted build from PR #4 |
+
+**Test evidence, scope-limited:** Node v22 ran **4/4 Worker tests passing** in a local reconstruction of the exact committed Worker/config/test files (Git blob SHA checks matched). The checked fetch path delegates to ASSETS; scheduled success and failure both log expected JSON. `npm run build` also **passed using byte-identical build script in an isolated fixture**, staging eight sample public assets while excluding Worker source and private docs. These are **not** a full production checkout build, Wrangler dry-run, or deployment.
+
+**Still required:** full repo checkout test run, `wrangler deploy --dry-run` (or an equivalent verified dry-run) and branch-specific browser validation; reconcile PR #3's root-assets configuration and approved metadata cleanup, confirm the actual Cloudflare Build settings, and obtain an explicit owner approval before any merge or deploy. Neither the existing account settings nor the live Worker was changed here.
