@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 // Build only public assets. Never publish repository notes, receipts or drafts by accident.
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const target = join(root, 'dist');
-const required = ['index.html', 'assets/skeleton-machine-cutout.webp', 'assets/sign-detail.webp', 'img/sign.jpg'];
+const required = ['index.html', 'assets/skeleton-machine-cutout.webp', 'assets/sign-detail.webp', 'img/sign.jpg', 'img/key-visual.jpg', 'img/baskets.jpg'];
 const files = ['index.html', 'robots.txt', 'sitemap.xml'];
 const dirs = ['assets', 'img'];
 
