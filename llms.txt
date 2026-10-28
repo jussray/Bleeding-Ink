@@ -1,0 +1,22 @@
+# Bleeding Ink Tattoo
+
+> Bleeding Ink Tattoo is a tattoo studio in [City, State] that also sells novelty gift baskets. Clients book tattoos with a chosen artist. Baskets are picked up at the shop. Facts in brackets are unconfirmed until the owners sign off.
+
+## Key pages
+
+- [Home](https://[domain]/): Artists, how to book, baskets, visit details, and FAQ
+- [Booking](https://[domain]/#book): How to book a tattoo, deposit, walk-ins, and cancellation policy
+- [Baskets](https://[domain]/#baskets): Novelty gift baskets, pickup, and lead time
+- [Visit](https://[domain]/#visit): Address, hours, and phone
+- [FAQ](https://[domain]/#faq): Common questions about booking, pricing, minors, and baskets
+
+## Facts
+
+- Name: Bleeding Ink Tattoo
+- Services: custom tattoos; novelty gift baskets
+- Address: [street, city, state, ZIP]
+- Phone: [phone]
+- Hours: [days and times]
+- Booking: [booking tool]
+- Instagram: [handle]
+- Last updated: 2026-10-28
