@@ -114,8 +114,8 @@
     .title-drips i:nth-child(2){height:64px;animation-delay:.8s}.title-drips i:nth-child(3){height:25px;animation-delay:2s}.title-drips i:nth-child(4){height:48px;animation-delay:1.1s}
     @keyframes ink-stretch{0%,100%{transform:scaleY(.8);opacity:.5}50%{transform:scaleY(1.2);opacity:1}}
     .hero-subtitle{margin:0 0 0 12px;font:600 clamp(12px,1.15vw,17px)/1.5 var(--label);letter-spacing:.42em;text-transform:uppercase;color:#e6ceaa}
-    .hero-art{position:absolute;z-index:2;right:3%;top:15%;width:min(46%,610px);pointer-events:none;filter:drop-shadow(0 0 56px rgba(186,108,43,.18))}
-    .hero-art::before{content:"";position:absolute;inset:12% 10% 11%;z-index:-1;background:radial-gradient(ellipse,rgba(219,145,74,.13),transparent 65%);filter:blur(20px)}
+    .hero-art{position:absolute;z-index:2;right:3%;top:15%;width:min(46%,610px);pointer-events:none;filter:drop-shadow(0 0 56px rgba(190,204,212,.14))}
+    .hero-art::before{content:"";position:absolute;inset:12% 10% 11%;z-index:-1;background:radial-gradient(ellipse,rgba(190,204,212,.08),transparent 65%);filter:blur(20px)}
     .hero-art img{width:100%;height:auto;display:block;filter:contrast(1.16) saturate(.95) drop-shadow(0 10px 25px rgba(0,0,0,.75));transform:rotate(-7deg);animation:art-float 8s ease-in-out infinite;transform-origin:60% 60%}
     @keyframes art-float{0%,100%{transform:rotate(-7deg) translateY(0)}50%{transform:rotate(-5deg) translateY(-12px)}}
     .needle-light{position:absolute;z-index:3;left:85%;top:85%;width:6px;height:6px;box-shadow:0 0 13px 4px var(--accent),0 0 55px 12px rgba(var(--accent-rgb),.40);border-radius:50%;background:#fff;transition:box-shadow 1s}
@@ -135,7 +135,7 @@
     .tone-buttons{display:flex;gap:8px}
     .tone{width:17px;height:17px;outline:0;border-radius:50%;padding:0;cursor:pointer;border:2px solid #171316;box-shadow:0 0 0 1px #837465;transition:transform .2s,box-shadow .2s}
     .tone[aria-pressed="true"]{transform:scale(1.2);box-shadow:0 0 0 1px #e4d5bf,0 0 11px currentColor}
-    .tone[data-tone="0"]{background:#d12c29;color:#d12c29}.tone[data-tone="1"]{background:#bd8137;color:#bd8137}.tone[data-tone="2"]{background:#874cbd;color:#874cbd}.tone[data-tone="3"]{background:#4b93af;color:#4b93af}
+    .tone[data-tone="0"]{background:#bbc8cb;color:#bbc8cb}.tone[data-tone="1"]{background:#b8ada0;color:#b8ada0}.tone[data-tone="2"]{background:#86819b;color:#86819b}.tone[data-tone="3"]{background:#738f9c;color:#738f9c}
     /* Content */
     .chapter{position:relative;padding:155px 0;background:var(--bg)}
     .chapter::before{content:"";position:absolute;top:0;left:50%;width:1px;height:60px;background:linear-gradient(to bottom,var(--accent),transparent)}
@@ -212,7 +212,7 @@
       .hero,.hero-inner{min-height:865px;min-height:max(865px,100svh)}
       .hero-type{top:17%;width:100%}.hero-kicker{font-size:9px;letter-spacing:.18em;margin-bottom:17px}.hero-kicker::before{width:19px}
       .hero-title{font-size:clamp(78px,17vw,132px);line-height:.79;max-width:550px}.hero-title .ink-word{font-size:1.3em}.hero-subtitle{letter-spacing:.27em;font-size:11px;margin-left:7px}
-      .hero-art{width:min(90%,470px);top:30%;right:-17%;opacity:.9}
+      .hero-art{width:min(90%,470px);top:40%;right:-17%;opacity:.9}
       .needle-light{top:85%;left:83%}.ink-drop{top:86%;left:82%}
       .hero-info{width:100%;bottom:73px;left:0;max-width:510px;padding:22px 23px}
       .hero-info h2{margin:12px 0;font-size:32px}.hero-info p{font-size:12px}.hero-info .hero-info-header{padding-bottom:12px}
@@ -226,14 +226,12 @@
       .booking{padding:100px 0}.booking-box{padding:75px 24px}.booking-box .section-heading{font-size:clamp(60px,13vw,97px)}
       .footer-top{display:block}.footer-links{margin-top:33px}.footer-bottom{flex-wrap:wrap}
     }
-    @media(max-width:400px){.hero-title{font-size:17.3vw}.hero-art{top:32%;right:-21%;width:100%}.hero-info{bottom:65px}.hero-info .hero-info-header{padding-bottom:8px}.hero-info h2{font-size:29px}.hero-info p{font-size:11px}.hero-actions .btn{font-size:8px;padding:13px 11px}.hero-footer{height:40px}}
+    @media(max-width:400px){.hero-title{font-size:17.3vw}.hero-art{top:40%;right:-21%;width:100%}.hero-info{bottom:65px}.hero-info .hero-info-header{padding-bottom:8px}.hero-info h2{font-size:29px}.hero-info p{font-size:11px}.hero-actions .btn{font-size:8px;padding:13px 11px}.hero-footer{height:40px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}.smoke-canvas{filter:blur(26px)}}
-      /* Key-visual hero: the supplied key image carries the hand, machine, smoke and blood drop. */
-    .hero{background:#080404 url("img/key-visual.jpg") 64% 50%/cover no-repeat}
-    .hero-art,.hero-smoke,.hero-grid,.tone-picker{display:none!important}
-    .hero-inner{z-index:1}
-    .hero::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,4,4,.82) 0%,rgba(8,4,4,.42) 30%,rgba(8,4,4,0) 52%),linear-gradient(0deg,rgba(8,4,4,.72) 0%,rgba(8,4,4,0) 40%)}
-    @media(max-width:760px){.hero{background-position:40% 50%}.hero::after{background:linear-gradient(0deg,rgba(8,4,4,.94) 0%,rgba(8,4,4,.62) 48%,rgba(8,4,4,.22) 100%)}}
+      /* Hero: near-black ground. Live smoke sits behind the glass; the ink drop cycles the palette. */
+    .hero{background:#050506}
+    .key-band{background:#050506;padding:0 0 clamp(40px,6vw,80px)}
+    .key-band img{display:block;width:100%;height:min(62vh,560px);object-fit:cover;object-position:50% 45%;border-top:1px solid rgba(205,182,145,.14);border-bottom:1px solid rgba(205,182,145,.14)}
   </style>
 </head>
 <body>
@@ -265,7 +263,7 @@
         <p class="hero-subtitle">Tattoo studio&nbsp; / &nbsp;Novelty baskets</p>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <img src="assets/skeleton-hand.webp" alt="" fetchpriority="high" width="582" height="698">
+        <img src="assets/skeleton-machine-cutout.webp" alt="" fetchpriority="high" width="1165" height="775">
         <span class="needle-light"></span>
         <span class="ink-drop" id="inkDrop"><svg viewBox="0 0 20 31" xmlns="http://www.w3.org/2000/svg"><path d="M10 0C8 8 1 14 1 21a9 9 0 0 0 18 0C19 14 12 8 10 0Z"/></svg></span>
       </div>
@@ -282,18 +280,19 @@
       <div class="hero-footer">
         <span class="scroll-indicator">Scroll to enter</span>
         <div class="tone-picker" aria-label="Ink smoke color">
-          <span>Ink atmosphere <b id="toneLabel" style="color:var(--bone);font-weight:600">CRIMSON</b></span>
+          <span>Ink atmosphere <b id="toneLabel" style="color:var(--bone);font-weight:600">SILVER</b></span>
           <div class="tone-buttons" role="group" aria-label="Choose smoke color">
-            <button type="button" class="tone" data-tone="0" aria-pressed="true" title="Crimson" aria-label="Crimson smoke"></button>
-            <button type="button" class="tone" data-tone="1" aria-pressed="false" title="Ember gold" aria-label="Ember-gold smoke"></button>
-            <button type="button" class="tone" data-tone="2" aria-pressed="false" title="Spectral violet" aria-label="Spectral-violet smoke"></button>
-            <button type="button" class="tone" data-tone="3" aria-pressed="false" title="Icy blue" aria-label="Icy-blue smoke"></button>
+            <button type="button" class="tone" data-tone="0" aria-pressed="true" title="Silver" aria-label="Silver smoke"></button>
+            <button type="button" class="tone" data-tone="1" aria-pressed="false" title="Moonlit" aria-label="Moonlit smoke"></button>
+            <button type="button" class="tone" data-tone="2" aria-pressed="false" title="Violet" aria-label="Violet smoke"></button>
+            <button type="button" class="tone" data-tone="3" aria-pressed="false" title="Blue" aria-label="Blue smoke"></button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="key-band" aria-label="Key image"><img src="img/key-visual.jpg" alt="Skeleton hand holding a tattoo machine, with red and gold smoke and a blood drop falling into a pool" loading="lazy" width="1672" height="940"></section>
   <section id="about" class="chapter" aria-labelledby="about-title">
     <div class="container intro-layout">
       <div data-reveal>
@@ -392,20 +391,20 @@
     else elements.forEach(el=>el.classList.add('visible'));
 
     const PALETTES=[
-      {name:'CRIMSON',hex:'#d12c29',rgb:'209,44,41',base:[184,30,37],secondary:[218,106,52]},
-      {name:'EMBER',hex:'#bd8137',rgb:'189,129,55',base:[180,101,39],secondary:[231,164,76]},
-      {name:'VIOLET',hex:'#874cbd',rgb:'135,76,189',base:[104,58,156],secondary:[170,89,186]},
-      {name:'SPECTRAL',hex:'#4b93af',rgb:'75,147,175',base:[34,104,139],secondary:[82,161,191]}
+      {name:'SILVER',hex:'#bbc8cb',rgb:'187,200,203',base:[190,204,212],secondary:[119,134,146]},
+      {name:'MOONLIT',hex:'#b8ada0',rgb:'184,173,160',base:[182,174,163],secondary:[135,141,145]},
+      {name:'VIOLET',hex:'#86819b',rgb:'134,129,155',base:[155,153,184],secondary:[111,125,142]},
+      {name:'BLUE',hex:'#738f9c',rgb:'115,143,156',base:[134,170,189],secondary:[96,128,150]}
     ];
     let current=0,active=PALETTES[0];
-    function changePalette(i){current=(i+PALETTES.length)%PALETTES.length;active=PALETTES[current];document.documentElement.style.setProperty('--accent',active.hex);document.documentElement.style.setProperty('--accent-rgb',active.rgb);document.getElementById('toneLabel').textContent=active.name;document.querySelectorAll('.tone').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.tone)===current)));}
+    function changePalette(i){current=(i+PALETTES.length)%PALETTES.length;active=PALETTES[current];document.getElementById('toneLabel').textContent=active.name;document.querySelectorAll('.tone').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.tone)===current)));}
     document.querySelectorAll('.tone').forEach(b=>b.addEventListener('click',()=>changePalette(Number(b.dataset.tone))));
     const drop=document.getElementById('inkDrop');
-    /* Palette holds on the chosen tone; visitors change it with the buttons. */
+    if(!reduced.matches){drop.addEventListener('animationiteration',()=>changePalette(current+1));}
 
     /* Movie smoke: procedurally animated at capped resolution. All color changes are synchronized to ink drops. */
     const canvas=document.getElementById('smoke'),ctx=canvas.getContext('2d',{alpha:true});
-    if(!ctx||canvas.offsetParent===null)return;
+    if(!ctx)return;
     let W=0,H=0,particles=[],last=0,elapsed=0,raf=0;
     const random=(min,max)=>Math.random()*(max-min)+min;
     function sizeCanvas(){const b=canvas.getBoundingClientRect();W=Math.max(160,Math.ceil(b.width*.56));H=Math.max(220,Math.ceil(b.height*.56));canvas.width=W;canvas.height=H;particles=Array.from({length:45},()=>createPuff(true));}

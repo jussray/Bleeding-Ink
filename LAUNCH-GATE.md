@@ -21,7 +21,8 @@ Nothing goes live until every item below is checked. The site ships with `noinde
 - [ ] Sign photo (`img/sign.jpg`): approved.
 - [ ] Interior photo (`img/floor.jpg`): a person is visible in the background reflection near the glass cases. Crop or reshoot. Halloween decor and crime-scene tape are in frame. Reshoot without them if the owners agree.
 - [ ] Basket photo (`img/baskets.jpg`): approved. Product brand names are visible.
-- [ ] Key visual (`img/key-visual.jpg`): supplied by Juss for the hero (stated 2026-10-28); it is not a photo of the shop. Still open before public use: whether it is AI-generated, and the license terms.
+- [ ] Hero cutout (`assets/skeleton-machine-cutout.webp`): taken from the attached V4 smoke-first build. Provenance, AI-generation status, and license are open before public use.
+- [ ] Key visual (`img/key-visual.jpg`): supplied by Juss for the key band below the hero (stated 2026-10-28); it is not a photo of the shop. Still open before public use: whether it is AI-generated, and the license terms.
 - [ ] The other six photos from the chat were NOT reviewed and are NOT used. Review them for people, third-party paintings, and personal items before any use.
 - [ ] Artist photos: only with written consent.
 
