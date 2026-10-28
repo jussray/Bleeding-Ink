@@ -232,6 +232,64 @@
     .hero{background:#050506}
     .key-band{background:#050506;padding:0 0 clamp(40px,6vw,80px)}
     .key-band img{display:block;width:100%;height:min(62vh,560px);object-fit:cover;object-position:50% 45%;border-top:1px solid rgba(205,182,145,.14);border-bottom:1px solid rgba(205,182,145,.14)}
+
+    /* Glass + smoke: mobile screenshot regression fix, based on the existing brand palette. */
+    .hero-title .ink-word{color:#ddc393;text-shadow:0 4px 0 #000,0 0 40px rgba(210,180,128,.12)}
+    .hero-smoke::after{background:radial-gradient(ellipse at 70% 55%,rgba(180,195,201,.04),transparent 57%)}
+    .smoke-canvas{filter:blur(8px) contrast(1.22);opacity:1}
+    .hero-art{background:linear-gradient(135deg,rgba(221,232,237,.04),rgba(0,0,0,.14) 72%);border:1px solid rgba(214,225,226,.15);box-shadow:inset 0 1px rgba(255,255,255,.11),0 25px 80px #000b;isolation:isolate}
+    .hero-art::after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid rgba(255,255,255,.08);background:linear-gradient(125deg,transparent 36%,rgba(255,255,255,.035) 46%,transparent 58%);z-index:3}
+    .glass{background:linear-gradient(145deg,rgba(229,239,239,.075),rgba(9,12,15,.38) 44%,rgba(8,11,14,.50));border-color:rgba(224,230,230,.23);-webkit-backdrop-filter:blur(11px) saturate(1.08);backdrop-filter:blur(11px) saturate(1.08)}
+    .smoke-controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:18px;border-top:1px solid rgba(225,230,230,.17);padding-top:14px}
+    .smoke-controls button{color:#ece2d1;border:1px solid rgba(229,224,207,.35);background:rgba(8,11,15,.34);padding:9px 12px;min-height:36px;cursor:pointer;font:600 10px/1.15 var(--label);letter-spacing:.06em}
+    .smoke-controls button[aria-pressed="true"]{background:rgba(199,210,210,.18);border-color:rgba(232,225,203,.7)}
+    .smoke-controls button:hover{border-color:var(--bone)}
+    .smoke-controls button:disabled{opacity:.45;cursor:not-allowed}
+    .smoke-label{font:500 9px/1.2 var(--label);color:#bbb5ac;letter-spacing:.13em;text-transform:uppercase;margin:0 4px}
+    .motion-paused .hero-art img,.motion-paused .ink-drop{animation-play-state:paused}
+    /* Show the entire original sign, never crop its actual lettering. */
+    .intro-art{min-height:0}
+    .intro-image{aspect-ratio:auto;overflow:visible}
+    .intro-image img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;filter:brightness(.9) contrast(1.12)}
+    .intro-image::after{display:none}
+    .image-caption{position:static;display:block;background:rgba(8,10,12,.76);padding:13px 16px;border-top:1px solid rgba(235,205,157,.25);color:var(--bone);font:600 10px/1.5 var(--label);letter-spacing:.16em}
+    @media(max-width:760px){
+      .hero{min-height:0;overflow:hidden}
+      .hero-inner{display:flex;flex-direction:column;gap:25px;min-height:0;padding-top:105px;padding-bottom:24px}
+      .hero-type{position:relative;top:auto;left:auto;width:100%;flex:none}
+      .hero-kicker{margin-bottom:18px}
+      .hero-title{font-size:clamp(56px,16vw,110px);line-height:.87;max-width:100%;letter-spacing:-.025em}
+      .hero-title .ink-word{font-size:1.20em}
+      .hero-subtitle{font-size:10px;letter-spacing:.16em;margin:12px 0 0}
+      .hero-art{position:relative;top:auto;right:auto;width:100%;max-width:480px;align-self:center;flex:none;margin:5px 0 0;min-height:0}
+      .hero-art img{transform:none;animation:none}
+      .needle-light,.ink-drop{left:82%;top:80%}
+      .hero-info{position:relative;top:auto;left:auto;bottom:auto;width:100%;max-width:none;flex:none;padding:22px 21px;margin:0;transform:none}
+      .hero-info .hero-info-header{gap:8px;flex-wrap:wrap}
+      .hero-info h2{font-size:clamp(29px,8vw,38px)}
+      .hero-info p{font-size:13px;line-height:1.6}
+      .hero-actions{margin-top:16px}
+      .hero-actions .btn{white-space:normal;min-height:43px}
+      .hero-side-label{display:none}
+      .hero-footer{position:relative;bottom:auto;left:auto;right:auto;height:auto;min-height:58px;flex-wrap:wrap;row-gap:10px;padding:14px 0 3px;margin-top:3px}
+      .tone-picker>span{display:block;font-size:9px;letter-spacing:.12em}
+      .tone{width:21px;height:21px}
+      .smoke-controls{gap:8px}
+      .smoke-controls button{padding:10px 9px;min-height:40px}
+      .intro-layout{min-width:0}
+      .intro-art{padding:7px}
+      .intro-image{width:100%}
+      .intro-image img{width:100%;height:auto}
+      .image-caption{font-size:9px;letter-spacing:.1em}
+    }
+    @media(max-width:400px){
+      .hero,.hero-inner{min-height:0}
+      .hero-title{font-size:15.9vw}
+      .hero-art{top:auto;right:auto;width:100%}
+      .hero-info{bottom:auto;left:auto;width:100%}
+      .hero-footer{height:auto}
+    }
+    @media(prefers-reduced-motion:reduce){.hero-art img,.hero-art::after,.ink-drop{animation:none!important}}
   </style>
 </head>
 <body>
@@ -274,6 +332,13 @@
         <div class="hero-actions">
           <a href="#book" class="btn btn-red">Enter the studio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a>
           <a href="#about" class="btn btn-outline">Our story ↗</a>
+        </div>
+        <div class="smoke-controls" role="group" aria-label="Smoke motion and density">
+          <button type="button" id="smokePause" aria-pressed="false">Pause smoke</button>
+          <span class="smoke-label">Smoke level</span>
+          <button type="button" data-density="whisper" aria-pressed="false">Whisper</button>
+          <button type="button" data-density="cinema" aria-pressed="true">Cinema</button>
+          <button type="button" data-density="storm" aria-pressed="false">Storm</button>
         </div>
       </div>
       <span class="hero-side-label">IF YOU AIN'T TATTED YOU SCATTED</span>
@@ -400,16 +465,34 @@
     function changePalette(i){current=(i+PALETTES.length)%PALETTES.length;active=PALETTES[current];document.getElementById('toneLabel').textContent=active.name;document.querySelectorAll('.tone').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.tone)===current)));}
     document.querySelectorAll('.tone').forEach(b=>b.addEventListener('click',()=>changePalette(Number(b.dataset.tone))));
     const drop=document.getElementById('inkDrop');
-    if(!reduced.matches){drop.addEventListener('animationiteration',()=>changePalette(current+1));}
+    // Keep silver as the default: ink-drip motion must not unexpectedly recolor the smoke.
+    // Color selection stays visitor-controlled through the palette buttons.
 
     /* Movie smoke: procedurally animated at capped resolution. All color changes are synchronized to ink drops. */
     const canvas=document.getElementById('smoke'),ctx=canvas.getContext('2d',{alpha:true});
     if(!ctx)return;
     let W=0,H=0,particles=[],last=0,elapsed=0,raf=0;
+    let smokePaused=false, smokeDensity=1;
+    const smokePause=document.getElementById('smokePause');
+    const densityButtons=Array.from(document.querySelectorAll('[data-density]'));
+    const levels={whisper:.48,cinema:1,storm:1.52};
+    smokePause.disabled=reduced.matches;
+    smokePause.addEventListener('click',()=>{
+      if(reduced.matches)return;
+      smokePaused=!smokePaused;
+      smokePause.setAttribute('aria-pressed',String(smokePaused));
+      smokePause.textContent=smokePaused?'Resume smoke':'Pause smoke';
+      document.documentElement.classList.toggle('motion-paused',smokePaused);
+      last=0;
+    });
+    densityButtons.forEach(button=>button.addEventListener('click',()=>{
+      smokeDensity=levels[button.dataset.density]||1;
+      densityButtons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+    }));
     const random=(min,max)=>Math.random()*(max-min)+min;
     function sizeCanvas(){const b=canvas.getBoundingClientRect();W=Math.max(160,Math.ceil(b.width*.56));H=Math.max(220,Math.ceil(b.height*.56));canvas.width=W;canvas.height=H;particles=Array.from({length:45},()=>createPuff(true));}
     function createPuff(initial=false){const r=random(45,155)*(W/800+.6);return{x:random(W*.11,W*.98),y:initial?random(H*.08,H*1.13):H+random(10,75),r,dx:random(-.12,.12),dy:random(.09,.38),phase:random(0,Math.PI*2),life:initial?random(0,230):0,maxLife:random(170,350),kind:Math.random()>.33?0:1,stretch:random(1.1,2.9),rot:random(-.7,.7)}}
-    function drawPuff(p,t){const a=Math.sin(Math.PI*Math.max(0,Math.min(1,p.life/p.maxLife)));if(a<.02)return;const rgb=p.kind?active.secondary:active.base;const v=(p.life/p.maxLife);const radius=p.r*(.7+v*.75);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot+Math.sin(t*.00019+p.phase)*.15);ctx.scale(1,p.stretch);const g=ctx.createRadialGradient(0,0,radius*.05,0,0,radius);g.addColorStop(0,`rgba(${rgb.join(',')},${(a*.14).toFixed(3)})`);g.addColorStop(.28,`rgba(${rgb.join(',')},${(a*.12).toFixed(3)})`);g.addColorStop(.62,`rgba(${rgb.join(',')},${(a*.038).toFixed(3)})`);g.addColorStop(1,`rgba(${rgb.join(',')},0)`);ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,radius,0,Math.PI*2);ctx.fill();ctx.restore();}
+    function drawPuff(p,t){const a=Math.sin(Math.PI*Math.max(0,Math.min(1,p.life/p.maxLife)))*smokeDensity;if(a<.02)return;const rgb=p.kind?active.secondary:active.base;const v=(p.life/p.maxLife);const radius=p.r*(.7+v*.75);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot+Math.sin(t*.00019+p.phase)*.15);ctx.scale(1,p.stretch);const g=ctx.createRadialGradient(0,0,radius*.05,0,0,radius);g.addColorStop(0,`rgba(${rgb.join(',')},${(a*.14).toFixed(3)})`);g.addColorStop(.28,`rgba(${rgb.join(',')},${(a*.12).toFixed(3)})`);g.addColorStop(.62,`rgba(${rgb.join(',')},${(a*.038).toFixed(3)})`);g.addColorStop(1,`rgba(${rgb.join(',')},0)`);ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,radius,0,Math.PI*2);ctx.fill();ctx.restore();}
     function drawWisps(t){
       // Broad, blurred ribbons layer across the fine volumetric puffs for a smoke-machine feel.
       const count=W<320?4:8;
@@ -418,8 +501,8 @@
         const col=k%2?active.secondary:active.base;
         const grad=ctx.createLinearGradient(0,H*.13,0,H*1.13);
         grad.addColorStop(0,`rgba(${col.join(',')},0)`);
-        grad.addColorStop(.4,`rgba(${col.join(',')},.035)`);
-        grad.addColorStop(.75,`rgba(${col.join(',')},.055)`);
+        grad.addColorStop(.4,`rgba(${col.join(',')},${(.035*smokeDensity).toFixed(3)})`);
+        grad.addColorStop(.75,`rgba(${col.join(',')},${(.055*smokeDensity).toFixed(3)})`);
         grad.addColorStop(1,`rgba(${col.join(',')},0)`);
         ctx.save();ctx.filter='blur(12px)';ctx.lineWidth=23+(k%3)*13;ctx.strokeStyle=grad;ctx.lineCap='round';ctx.beginPath();
         for(let j=0;j<=16;j++){
@@ -430,13 +513,13 @@
         ctx.stroke();ctx.restore();
       }
     }
-    function frame(time){raf=requestAnimationFrame(frame);if(document.hidden||reduced.matches)return;if(time-last<30)return;const dt=Math.min((time-last)/16.67,2.5)||1;last=time;elapsed+=dt;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='screen';
+    function frame(time){raf=requestAnimationFrame(frame);if(document.hidden||reduced.matches||smokePaused){last=time;return;}if(time-last<30)return;const dt=Math.min((time-last)/16.67,2.5)||1;last=time;elapsed+=dt;ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='screen';
       for(let i=0;i<particles.length;i++){const p=particles[i];p.life+=dt;p.y-=p.dy*dt;p.x+=(p.dx+Math.sin(elapsed*.006+p.phase)*.22)*dt;if(p.life>p.maxLife||p.y< -p.r*3){particles[i]=createPuff(false);continue}drawPuff(p,time)}
       drawWisps(time);ctx.globalCompositeOperation='source-over';}
     sizeCanvas();if(!reduced.matches)raf=requestAnimationFrame(frame);else{particles.forEach(p=>drawPuff(p,0))}
     window.addEventListener('resize',()=>{sizeCanvas();if(reduced.matches)particles.forEach(p=>drawPuff(p,0))},{passive:true});
     document.addEventListener('visibilitychange',()=>{last=0});
-    reduced.addEventListener('change',()=>{cancelAnimationFrame(raf);sizeCanvas();if(reduced.matches)particles.forEach(p=>drawPuff(p,0));else raf=requestAnimationFrame(frame)});
+    reduced.addEventListener('change',()=>{cancelAnimationFrame(raf);smokePause.disabled=reduced.matches;sizeCanvas();if(reduced.matches)particles.forEach(p=>drawPuff(p,0));else raf=requestAnimationFrame(frame)});
   })();
 </script>
 </body>
