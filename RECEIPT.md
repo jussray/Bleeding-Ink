@@ -1,8 +1,14 @@
-# Handoff receipt: Bleeding Ink Tattoo site draft (local, not a repo receipt)
+# Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:NONE|branch:NONE|head:NONE|subject:tattoo-shop-site/index.html|evidence:sha256=8f95d055851dd6ebf4f8bcd1b4d8a149f9d8fdd7382c26f6d20e4a6908b1f08d|runtime:playwright-chromium-checks-2026-10-28-smoke-merge
-Proof cookie: da9d05fa513e70f2
-Scope: local draft only. No repo, no branch, no commit, no deploy, no publish.
+Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:3165c5c902c8985674ce0ad337d70ae5e0ce0fe0|subject:tattoo-shop-site/index.html|evidence:sha256=db653c3960a6e7c28521ee1b69514d2a1a8bdcf5253f20fbcaabd7ff8f43fb75|runtime:workers-build-23bdbae8-preview-failed-2026-10-28
+Proof cookie: 7aaad3cac4f7e111
+Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
+
+Build status (2026-10-28)
+- Workers build 23bdbae8 (draft branch, commit 3165c5c) failed. Cause: the non-main build ran `npx wrangler preview`, and Wrangler stopped with "Your Wrangler configuration needs a `previews` block". The failed step was the preview deploy, so nothing was published.
+- The Worker's API shows one trigger, `main`, running `npx wrangler deploy`. The non-main setting is not visible through the API.
+- Fix not applied. Adding `previews: {}` would let preview builds deploy, against the decision to turn off non-main builds. Pending: turn off builds for non-main branches in the Cloudflare dashboard (owner action).
+- Live `main` page still shows bracketed placeholders. Rollback target not confirmed. Owner decision: keep, roll back, or take down.
 
 Decided
 - Static HTML over a React artifact bundle, for crawlability by search and AI engines.
