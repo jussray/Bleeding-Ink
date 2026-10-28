@@ -1,0 +1,18 @@
+{
+  "streetAddress": "",
+  "cityStateZip": "",
+  "phone": "",
+  "hours": "",
+  "siteUrl": "",
+  "bookingUrl": "",
+  "googleReviewUrl": "",
+  "googleMapsUrl": "",
+  "instagramUrl": "",
+  "yelpUrl": "",
+  "appleMapsUrl": "",
+  "bingMapsUrl": "",
+  "profileVerified": false,
+  "categoryConfirmed": false,
+  "reviewPolicyApproved": false,
+  "crawlerPolicyApproved": false
+}
