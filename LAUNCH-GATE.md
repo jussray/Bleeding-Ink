@@ -4,7 +4,7 @@ Nothing goes live until every item below is checked. The site ships with `noinde
 
 ## 1. Facts from the owners (blocking)
 - [ ] Shop name, legal name, and the owners who sign off. Owner named by Juss 2026-10-28: Leak. Legal name and sign-off still open.
-- [ ] Street address, phone, hours, Instagram handle. Supplied by Juss 2026-10-28: 500 Galleria Drive, phone 215-980-1386. Still missing: city, state, ZIP, hours, Instagram. Owners confirm all of it.
+- [ ] Street address, phone, hours, Instagram handle. Supplied by Juss 2026-10-28: 500 Galleria Drive, phone 215-980-1386. Hours supplied by Juss 2026-10-28: Tuesday–Sunday 11 AM–7 PM, Monday by appointment only (owners confirm; set the Monday booking rule). Still missing: city, state, ZIP, Instagram. Owners confirm all of it.
 - [ ] Artist names, styles, years tattooing, and written consent to show their work and name
 - [ ] Booking tool chosen by the owners; deposit amount and whether it applies to the final price
 - [ ] Cancellation and no-show policy

@@ -16,7 +16,7 @@
 - Services: custom tattoos; novelty gift baskets
 - Address: [street, city, state, ZIP]
 - Phone: [phone]
-- Hours: [days and times]
+- Hours: Tuesday–Sunday 11 AM–7 PM; Monday by appointment only
 - Booking: [booking tool]
 - Instagram: [handle]
 - Last updated: 2026-10-28
