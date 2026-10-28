@@ -28,3 +28,11 @@ test('schema and crawler policies were not extended for this UI task',()=>{
   assert.ok(html.includes('application/ld+json')); // Existing, unchanged; not a new SEO feature.
   assert.ok(!html.includes('"@type": "FAQPage"'));
 });
+
+test('local build requires every image referenced by the page',async()=>{
+  const build = await readFile(new URL('../scripts/build.mjs', import.meta.url),'utf8');
+  const required = build.match(/const required = \[([^\n]+)\];/);
+  assert.ok(required,'build must declare a required-file allowlist');
+  const images = [...new Set([...html.matchAll(/\\bsrc="((?:img|assets)\\/[^"]+)"/g)].map(m=>m[1]))];
+  for(const asset of images)assert.ok(required[1].includes("'"+asset+"'"),'build missing required image: '+asset);
+});
