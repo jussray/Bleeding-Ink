@@ -22,5 +22,5 @@ Open
 - Trademark and name check not run.
 - SEO/GEO research delivered: /home/claude/reports/Tattoo studio SEO and GEO evidence.md
 
-Next gate: owners' answers and the booking tool link. A git push or draft PR needs a repo attached in the app; this folder is not a repo.
+Next gate: owners' answers and the booking tool link. Repo jussray/Bleeding-Ink holds a draft PR for this build (branch draft/site-v4-keyvisual). Do not merge.
 Rollback: to undo the key-visual hero, copy /home/claude/tattoo-shop-site-merged-prekeyvisual.html over index.html and delete img/key-visual.jpg. To go back to v3, copy /home/claude/tattoo-shop-site-v3-superseded.html over index.html and delete assets/.
