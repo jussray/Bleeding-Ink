@@ -1,8 +1,8 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-glass-clear|head:c9b7aae497b587f3ea7463bb93f0d410e589996b|subject:tattoo-shop-site/website/index.html|evidence:sha256=4688bbd7a0b22098590d59c303bf660daa8a71283f54a5d33e2f5ffc78cf783a|runtime:glass-clear-playwright-desktop-mobile-reduced
-Proof cookie: 69408a0e701d6898
-Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
+Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-glass-clear|head:92388b46a6bacc5f7bd1dca35d3ff37d3a9d682f|subject:tattoo-shop-site/website/index.html|evidence:sha256=7cf041abbc997a570459c2971d9b741aec4fcda352efc60fa1f9f1e2abd5eac0|runtime:welcome-page-playwright-desktop-mobile-reduced
+Proof cookie: 68b6352414df0d45
+Scope: draft only. Draft PR #7 on branch fix/bleeding-ink-glass-clear (PR #3 is merged). No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
 - Workers build 23bdbae8 (draft branch, commit 3165c5c) failed. Cause: the non-main build ran `npx wrangler preview`, and Wrangler stopped with "Your Wrangler configuration needs a `previews` block". The failed step was the preview deploy, so nothing was published.
@@ -124,3 +124,15 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head b02e6adb628
 - Playwright (desktop, mobile, reduced motion): no page errors.
 - 24 unit tests pass; CI-style cmp matches.
 Merge: not approved. Needs exact approval, e.g. "Merge PR at head c9b7aae497b587f3ea7463bb93f0d410e589996b".
+
+## Implant 2026-10-28 (branch fix/bleeding-ink-glass-clear, head 92388b4): welcome page
+
+- Built from the welcome mockup: nav Home, About, Gallery, Book, Contact; red-outlined Book Now; centred BLEEDING over INK lockup with TATTOO STUDIO between rules; hand upper-left; drip stream under INK into the puddle.
+- Hidden to match the mockup: the glass card (.hero-info) and the vertical side label. "Scroll to enter" footer kept.
+- Fixed: drip stream was anchored to the left edge of the page; on phones the hand overlapped the header logo.
+- Nav anchors now #top, #about, #artists, #book, #contact (footer gets id contact). The earlier #visit and #reviews anchors had no target and are gone.
+- Gallery maps to #artists, which is a judgement call; check it against the mockup intent.
+- 24 unit tests pass; CI-style cmp matches.
+- Playwright (desktop 1440x900, mobile 390x844, reduced motion): no page errors, no horizontal overflow, body rgb(0, 0, 0), parallax 75px at scroll 300 and off under reduced motion. Phone: hand top at 76px, header bottom at 76px. Drip x matches the centre of INK at both widths.
+Not verified: the preview check on this head; production; photo rights for skeleton-hand.webp (the mockup hand is a bone hand, the repo asset is gold).
+Merge: not approved. Needs exact approval, e.g. "Merge PR #7 at head 92388b46a6bacc5f7bd1dca35d3ff37d3a9d682f".
