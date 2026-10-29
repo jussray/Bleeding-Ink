@@ -2,9 +2,12 @@
 
 Nothing goes live until every item below is checked. The site ships with `noindex` on purpose, so an unfinished draft cannot be indexed.
 
-## 1. Facts from the owners (blocking)
-- [ ] Shop name, legal name, and the owners who sign off. Owner named by Juss 2026-10-28: Leak. Legal name and sign-off still open.
-- [ ] Street address, phone, hours, Instagram handle. Supplied by Juss 2026-10-28: 500 Galleria Drive, phone 215-980-1386. Hours supplied by Juss 2026-10-28: Tuesday–Sunday 11 AM–7 PM, Monday by appointment only (owners confirm; set the Monday booking rule). Still missing: city, state, ZIP, Instagram. Owners confirm all of it.
+## 1. Owner-sourced facts and remaining release checks
+
+**Provenance correction, 2026-10-29:** The user explicitly confirmed that the Bleeding Ink details they previously provided **came from the owner**. These are *owner-sourced facts relayed by the user*, not AI guesses or independently verified Google/tenant-listing records. Do not ask the user to repeat the same information just to confirm its provenance. Business registration, suite/tenancy, online booking, third-party listing linkage and launch authorization are separate checks.
+
+- [ ] Legal business name, exact public trading identity and owner release sign-off. The user previously named an owner as **Leak** on 2026-10-28; this is recorded as owner-sourced information, not confirmation of a public registration.
+- [ ] Complete business contact/listing reconciliation. **Owner-provided via user:** street address **500 Galleria Drive**, phone **215-980-1386**, hours **Tuesday–Sunday 11 AM–7 PM; Monday by appointment only** (provided 2026-10-28 and provenance confirmed 2026-10-29). Still to reconcile: exact suite, city/state/ZIP as the studio's own address, current trading name versus separately listed Galleria Ink, Instagram, and the Monday booking rule. Do not substitute another tenant's data.
 - [ ] Artist names, styles, years tattooing, and written consent to show their work and name
 - [ ] Booking tool chosen by the owners; deposit amount and whether it applies to the final price
 - [ ] Cancellation and no-show policy
