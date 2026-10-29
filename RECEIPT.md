@@ -1,7 +1,7 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:b02e6adb62842dc5df667e70a08a280521f3c17f|subject:tattoo-shop-site/website/index.html|evidence:sha256=dc2112aa4e35826c3312ec8fcc5b150fa8961e2a17b33bbeec90710e9035a72a|runtime:glass-translucent-playwright-desktop-mobile-reduced
-Proof cookie: 58f752b675bc6833
+Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-glass-clear|head:c9b7aae497b587f3ea7463bb93f0d410e589996b|subject:tattoo-shop-site/website/index.html|evidence:sha256=4688bbd7a0b22098590d59c303bf660daa8a71283f54a5d33e2f5ffc78cf783a|runtime:glass-clear-playwright-desktop-mobile-reduced
+Proof cookie: 69408a0e701d6898
 Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
@@ -117,3 +117,10 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 60194fc0422
 - Playwright (desktop 1440x900, mobile 390x844, reduced motion): no page errors, computed glass background matches the new values.
 Not verified: the preview check on this head.
 Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head b02e6adb62842dc5df667e70a08a280521f3c17f".
+
+## Implant 2026-10-29 (branch fix/bleeding-ink-glass-clear, head c9b7aae): nearly clear glass
+
+- Glass fill lowered to 0.12 black at the bottom and 0.02 white at the top, on top of current main.
+- Playwright (desktop, mobile, reduced motion): no page errors.
+- 24 unit tests pass; CI-style cmp matches.
+Merge: not approved. Needs exact approval, e.g. "Merge PR at head c9b7aae497b587f3ea7463bb93f0d410e589996b".
