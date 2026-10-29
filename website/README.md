@@ -1,16 +1,20 @@
-# Bleeding Ink — V4 staging preview
+# Bleeding Ink — V4 prelaunch staging
 
-This GitHub branch is a **draft staging import**, not the deployable V4 source-of-truth. The complete V4 package, including verified local build scripts, tests, and original image assets, was delivered as a separate ZIP in the conversation.
+The historical note saying this repository is missing images and build scripts is obsolete: `website/assets/`, `build.py`, `audit_listings.py`, `studio.json` and `tests/` now exist in the GitHub repository.
 
-## Current branch contents
+`website/index.html` is the generated, static, **noindex** cinematic glass-and-smoke preview. `template.html` and `studio.json` are its build inputs. The official contact information and approval fields remain incomplete.
 
-- `index.html`: generated cinematic **noindex** preview (smoke, changing ink colors, glass interface).
-- `template.html`: corresponding source template.
-- `studio.json`: blank, owner-controlled contact details and launch approvals.
-- `REPO-HANDOFF.md`, `LAUNCH-GATE.md`, `CRAWLER-DECISION.md`: release requirements.
+## Local verification
 
-**Blocker:** Original image assets (`assets/skeleton-hand.webp`, `assets/sign-detail.webp`) and the local Python build/audit/test scripts are **not transferred into this repository branch**. The preview's image references will not render correctly until the image assets are added. Do not merge, deploy or represent this branch as production-ready.
+From the `website` directory:
 
-Local ZIP package and test evidence remain the source of truth for V4. No public listing, customer review, crawler configuration or site deployment was changed. No schema or llms.txt was added.
+```sh
+python -m unittest discover -s tests -v
+python build.py --output /tmp/bleeding-ink-preview.html
+cmp index.html /tmp/bleeding-ink-preview.html
+python audit_listings.py --output /tmp/bleeding-ink-audit.md
+```
 
-Review requests must be neutral and voluntary. Never solicit only happy customers or reward reviews.
+The Worker uses the repository-root `wrangler.jsonc` to serve only `website/`; `.assetsignore` is intended to expose just HTML and image assets. No Google Business Profile, reviews, customers, crawler settings or production publishing controls are changed by the local scripts.
+
+Before removing `noindex`, finish the owner approvals in `LAUNCH-GATE.md`. No schema, FAQPage or `llms.txt` is used as a visibility shortcut.
