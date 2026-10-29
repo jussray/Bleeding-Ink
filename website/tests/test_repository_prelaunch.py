@@ -21,9 +21,7 @@ class RepositoryPreviewSafetyTests(unittest.TestCase):
                 page = entry.read_text(encoding='utf-8')
                 head = page.split('</head>', 1)[0]
                 self.assertIn('content="noindex,nofollow"', head)
-                self.assertNotRegex(
-                    page, r'<script\\b[^>]*type=["\\\']application/ld\\+json["\\\']',
-                    'Do not publish unverified schema in a preview')
+                self.assertNotIn('application/ld+json', page)
                 self.assertNotIn('https://[domain]', head)
                 self.assertNotIn('img/og-1200x630.jpg', head)
 
