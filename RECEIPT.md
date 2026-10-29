@@ -1,8 +1,8 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-glass-clear|head:92388b46a6bacc5f7bd1dca35d3ff37d3a9d682f|subject:tattoo-shop-site/website/index.html|evidence:sha256=7cf041abbc997a570459c2971d9b741aec4fcda352efc60fa1f9f1e2abd5eac0|runtime:welcome-page-playwright-desktop-mobile-reduced
-Proof cookie: 68b6352414df0d45
-Scope: draft only. Draft PR #7 on branch fix/bleeding-ink-glass-clear (PR #3 is merged). No merge, no production deploy, no publish by this receipt.
+Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-live-audit-images|head:ab97abe5927565c8b2be07a02d4cb5bc93b0d4c9|subject:tattoo-shop-site/website/index.html|evidence:sha256=0a82e333c1116f75888f03049eb07e87c96831d5e600631a2f959b4103f7bc28|runtime:live-audit-fixes-playwright-desktop-mobile
+Proof cookie: bc26300167983eab
+Scope: draft only. Draft PR #8 on branch fix/bleeding-ink-live-audit-images (PR #7 merged at e9604d7). No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
 - Workers build 23bdbae8 (draft branch, commit 3165c5c) failed. Cause: the non-main build ran `npx wrangler preview`, and Wrangler stopped with "Your Wrangler configuration needs a `previews` block". The failed step was the preview deploy, so nothing was published.
@@ -136,3 +136,14 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR at head c9b7aae497b587
 - Playwright (desktop 1440x900, mobile 390x844, reduced motion): no page errors, no horizontal overflow, body rgb(0, 0, 0), parallax 75px at scroll 300 and off under reduced motion. Phone: hand top at 76px, header bottom at 76px. Drip x matches the centre of INK at both widths.
 Not verified: the preview check on this head; production; photo rights for skeleton-hand.webp (the mockup hand is a bone hand, the repo asset is gold).
 Merge: not approved. Needs exact approval, e.g. "Merge PR #7 at head 92388b46a6bacc5f7bd1dca35d3ff37d3a9d682f".
+
+## Implant 2026-10-28 (branch fix/bleeding-ink-live-audit-images, head ab97abe): live audit fixes
+
+- Source: read-only audit of the live Worker and repo (see the audit notes in the PR body).
+- website/.assetsignore: original-sign.jpg is no longer published. The file stays in the repo. Test updated to match.
+- sign-detail.webp: declared size set to its real 952x508.
+- Root index.html: stale placeholder draft replaced by a noindex retirement stub.
+- 24 unit tests pass from website/; CI-style cmp matches; Playwright desktop and mobile show both images loaded and no page errors.
+Not verified: the wrangler upload with the new .assetsignore rule; the preview check on this head; image rights for all three photos.
+Not changed: root img/ and root robots/sitemap/llms drafts with placeholders; cache on the bare live URL.
+Merge: not approved. Needs exact approval, e.g. "Merge PR #8 at head <final head>".

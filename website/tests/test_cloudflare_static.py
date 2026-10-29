@@ -19,7 +19,7 @@ class StaticDeployConfigTests(unittest.TestCase):
     def test_only_html_and_images_are_selected_for_upload(self):
         lines = [x.strip() for x in (SITE / '.assetsignore').read_text().splitlines()
                  if x.strip() and not x.strip().startswith('#')]
-        self.assertEqual(lines, ['*', '!/index.html', '!/assets/', '!/assets/**'])
+        self.assertEqual(lines, ['*', '!/index.html', '!/assets/', '!/assets/**', '/assets/original-sign.jpg'])
         for p in ('index.html', 'assets/skeleton-hand.webp',
                   'assets/sign-detail.webp', 'assets/original-sign.jpg'):
             self.assertTrue((SITE / p).is_file(), p)
