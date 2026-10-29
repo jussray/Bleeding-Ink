@@ -1,7 +1,7 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:b1cf1ee72a309ca601934dd094325e0a8b6e625e|subject:tattoo-shop-site/website/index.html|evidence:sha256=f8832c586e5a1b25bde868f91f8f7b95243e0773e4c4cc70a0d0ca51209937b3|runtime:parallax-glass-playwright-desktop-mobile-reduced
-Proof cookie: 6bba3a0d865dd7cd
+Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:66d9b7e35c999e3c27f97c9aa0e2fc3ee1de3bb2|subject:tattoo-shop-site/website/index.html|evidence:sha256=c8e4516afe46bd1e6ab3deb5786b392703f91f60aa6f5ad0299f1b090882e000|runtime:copy-neutral-playwright-desktop-mobile-reduced
+Proof cookie: c78d30eb20b741db
 Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
@@ -94,3 +94,11 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 8b3f0b9".
 - Build: website/index.html regenerated with build.py; 22 unit tests pass; CI-style cmp matches.
 Not verified: the preview check on b1cf1ee, and mergeable state at this head (last gh check was clean at 5be9e41).
 Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head b1cf1ee".
+
+## Implant 2026-10-29 (draft head 66d9b7e): sign-free copy
+
+- Hero line and identity paragraph no longer describe the site as based on the sign. Photo alt text unchanged. Built page has no remaining sign-based copy.
+- website/index.html regenerated; 22 unit tests pass; CI-style cmp matches.
+- Playwright (desktop 1440x900, mobile 390x844, reduced motion): no page errors, no horizontal overflow, body rgb(0, 0, 0), hero parallax 75px at scroll 300 and off under reduced motion.
+Not verified: the preview check on 66d9b7e.
+Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 66d9b7e".
