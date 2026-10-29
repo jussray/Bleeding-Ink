@@ -91,7 +91,7 @@ def render_review(data):
     if review_url:
         review_button = anchor(review_url, 'Leave an honest Google review ↗', 'btn btn-red')
     else:
-        review_button = '<p class="pending">Google review link will be added after the official Business Profile is verified.</p>'
+        review_button = '<p class="pending">The studio's official review link isn't available here yet.</p>'
     read_button = anchor(maps_url, 'Read public reviews ↗', 'btn btn-outline') if maps_url else ''
     return ('''<article class="local-panel glass" id="reviews" aria-labelledby="reviews-title">
         <span class="micro">Real experiences only</span><h3 id="reviews-title">Your voice matters.</h3>
@@ -105,7 +105,7 @@ def render_booking(data):
     url = data.get('bookingUrl')
     if url:
         return anchor(url, 'Book your session ↗', 'btn btn-red')
-    return '<button class="btn btn-red" type="button" id="bookingButton">Booking details pending</button>'
+    return '<button class="btn btn-red" type="button" id="bookingButton">Booking information</button>'
 
 
 def release_description(data):
@@ -116,7 +116,7 @@ def render_sections(data):
     return '''<section class="local-hub" id="visit" aria-labelledby="visit-title">
     <div class="container"><span class="eyebrow">Find us · Share your experience</span>
       <h2 class="section-heading" id="visit-title">The <em>real-world</em> details.</h2>
-      <p class="local-intro">A cinematic entrance. Clear information when it matters. Contact details and review links here are displayed only when supplied by the studio.</p>
+      <p class="local-intro">Studio address, hours, and official review links will appear here when confirmed.</p>
       <div class="local-grid">
         <article class="local-panel glass">
           <span class="micro">Visit the studio</span><h3>Find Bleeding Ink.</h3>
@@ -135,7 +135,7 @@ def render_footer(data):
         if data.get(key):
             parts.append(e(data[key]))
     if len(parts) == 1:
-        parts.append('Address, phone and hours pending verification')
+        parts.append('Studio contact details coming soon')
     return '<br>'.join(parts)
 
 
