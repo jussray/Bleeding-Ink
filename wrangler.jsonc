@@ -1,5 +1,15 @@
 {
   "name": "bleeding-ink",
+  "main": "src/worker.js",
   "compatibility_date": "2026-10-28",
-  "assets": { "directory": "./website" }
+  "assets": {
+    "directory": "./website",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": ["17 13 * * *"]
+  }
 }

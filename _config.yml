@@ -1,0 +1,10 @@
+# GitHub Pages/Jekyll: publish the customer site, never internal project evidence.
+# Keep governance receipts and Worker source in GitHub, not the public _site output.
+exclude:
+  - README.md
+  - RECEIPT.md
+  - LAUNCH-GATE.md
+  - wrangler.jsonc
+  - src/
+  - website/
+  - node_modules/
