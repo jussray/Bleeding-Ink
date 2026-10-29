@@ -87,7 +87,7 @@ def audit(repo=REPO):
     try:
         rules = [line.strip() for line in (site / '.assetsignore').read_text(encoding='utf-8').splitlines()
                  if line.strip() and not line.strip().startswith('#')]
-        if rules != ['*', '!/index.html', '!/assets/', '!/assets/**']:
+        if rules != ['*', '!/index.html', '!/assets/', '!/assets/**', '/assets/original-sign.jpg']:
             failures.append('Worker static upload allowlist differs from audited policy')
     except OSError:
         failures.append('Worker .assetsignore missing')

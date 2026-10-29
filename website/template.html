@@ -38,7 +38,7 @@
     .btn-red:hover{box-shadow:0 12px 52px rgba(var(--accent-rgb),.4)}
     .btn-outline{border-color:rgba(234,206,167,.45);background:rgba(8,7,7,.25);color:var(--ink)}
     .btn-outline:hover{background:rgba(226,197,161,.12);border-color:var(--bone)}
-    .glass{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.3));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+    .glass{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.12));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
     .glass::before{content:"";position:absolute;inset:1px;pointer-events:none;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.09),transparent 18%,transparent 70%,rgba(255,255,255,.04));mask-image:linear-gradient(#000,transparent 60%);z-index:-1}
     /* Header */
     .header{position:absolute;z-index:30;top:0;left:0;right:0;border-bottom:1px solid rgba(242,215,181,.11)}
@@ -202,6 +202,24 @@
     @media(max-width:400px){.hero-title{font-size:17.3vw}.hero-art{top:39%;right:-9%;width:58%}.hero-info{bottom:65px}.hero-info .hero-info-header{padding-bottom:8px}.hero-info h2{font-size:29px}.hero-info p{font-size:11px}.hero-actions .btn{font-size:8px;padding:13px 11px}.hero-footer{height:40px}}
     @media(max-width:760px){.puddle{height:22%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}.puddle .smoke-canvas{filter:blur(18px)}.ink-drop{opacity:0}.puddle-splash{display:none}}
+      /* Welcome page (mock 2026-10-28): hand upper-left, centred lockup, drip falls through the logo into the puddle */
+    .hero-kicker{display:none}
+    .hero-type{top:30%;left:0;right:0;width:auto;text-align:center}
+    .hero-title{margin:0 auto}
+    .hero-title span{display:block}
+    .hero-subtitle{margin:22px auto 0;display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,26px);letter-spacing:.5em;text-transform:uppercase}
+    .hero-subtitle::before,.hero-subtitle::after{content:"";width:clamp(48px,10vw,150px);height:1px;background:rgba(230,206,170,.55)}
+    .hero-info{display:none}
+    .hero-art{left:12%;right:auto;top:7%;width:min(36%,500px)}
+    .hero-title .ink-word{display:inline-block;position:relative}.hero-title .title-drips{left:50%;transform:translateX(-50%)}
+    .hero-side-label{display:none}.nav-book{border-color:var(--brand)}
+    .hero-title>span{animation:lockup-rise 1.4s cubic-bezier(.2,.7,.2,1) both}
+    .hero-title>span:nth-child(2){animation-delay:.25s}
+    .hero-subtitle::before,.hero-subtitle::after{animation:rule-draw 1.2s .7s cubic-bezier(.2,.7,.2,1) both}
+    .title-drips i{animation-duration:3.65s}
+    @keyframes lockup-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+    @keyframes rule-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @media(max-width:760px){.hero-type{top:44%}.hero-title{font-size:clamp(64px,17vw,120px)}.hero-art{left:4%;top:10%;width:60%}.hero-subtitle{letter-spacing:.3em}}
   </style>
 </head>
 <body>
@@ -212,13 +230,13 @@
       <span class="wordmark-text">BLEEDING <b>INK</b></span>
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#about">The story</a><a href="#experience">Experience</a><a href="#artists">Artists</a><a href="#baskets">Baskets</a><a href="#visit">Visit</a><a href="#reviews">Reviews</a>
+      <a href="#top">Home</a><a href="#about">About</a><a href="#artists">Gallery</a><a href="#book">Book</a><a href="#contact">Contact</a>
     </nav>
-    <a class="nav-book" href="#book">Book a session ↗</a>
+    <a class="nav-book" href="#book">Book now ↗</a>
     <button class="mobile-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu ☰</button>
   </div>
   <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#about">The story</a><a href="#experience">Experience</a><a href="#artists">Artists</a><a href="#baskets">Baskets</a><a href="#visit">Visit</a><a href="#reviews">Reviews</a><a href="#book">Book</a>
+    <a href="#top">Home</a><a href="#about">About</a><a href="#artists">Gallery</a><a href="#book">Book</a><a href="#contact">Contact</a>
   </nav>
 </header>
 <main id="top">
@@ -229,7 +247,7 @@
       <div class="hero-type">
         <p class="hero-kicker">Art with a darker pulse</p>
         <h1 class="hero-title" id="hero-title"><span>BLEEDING</span><span class="ink-word">INK<span class="title-drips" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span></h1>
-        <p class="hero-subtitle">Tattoo studio&nbsp; / &nbsp;Est. in ink</p>
+        <p class="hero-subtitle">Tattoo studio</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <img src="assets/skeleton-hand.webp" alt="" fetchpriority="high" width="582" height="698">
@@ -264,7 +282,7 @@
       </div>
       <div class="intro-art glass" data-reveal>
         <figure class="intro-image" style="margin:0">
-          <img src="assets/sign-detail.webp" loading="lazy" alt="Skeletal hand with red gothic lettering and antique-gold ornamental details" width="1400" height="747">
+          <img src="assets/sign-detail.webp" loading="lazy" alt="Skeletal hand with red gothic lettering and antique-gold ornamental details" width="952" height="508">
           <figcaption class="image-caption">The original mark &nbsp; / &nbsp; Bleeding Ink</figcaption>
         </figure>
       </div>
@@ -299,22 +317,22 @@
   </section>
   <section id="artists" class="studio-section" aria-labelledby="artists-title">
     <div class="container">
-      <div class="studio-row" data-reveal><div><span class="eyebrow">Meet the people behind the ink</span><h2 class="section-heading" id="artists-title">The <em>artists.</em></h2></div><p class="body-copy">Real artist profiles, specialties, work galleries, and booking links belong here. Those details will be added once confirmed — no made-up portfolios.</p></div>
-      <div class="artist-panel glass" data-reveal><div><span class="micro">Artist directory / coming soon</span><h3>Every hand has a signature.</h3><p>Artist names, portraits, and actual work can be added here when available.</p></div><div class="artist-icon" aria-hidden="true">✦</div></div>
+      <div class="studio-row" data-reveal><div><span class="eyebrow">Meet the people behind the ink</span><h2 class="section-heading" id="artists-title">The <em>artists.</em></h2></div><p class="body-copy">Artist introductions and portfolios are coming soon. Check back to meet the people behind the work.</p></div>
+      <div class="artist-panel glass" data-reveal><div><span class="micro">Artist directory / coming soon</span><h3>Every hand has a signature.</h3><p>The studio's artist lineup and work will be featured here when confirmed.</p></div><div class="artist-icon" aria-hidden="true">✦</div></div>
     </div>
   </section>
   <section id="baskets" class="baskets" aria-labelledby="basket-title">
     <div class="container basket-layout">
-      <div data-reveal><span class="eyebrow">Beyond the ink</span><h2 class="section-heading" id="basket-title">A little <em>extra.</em></h2><p class="lede-quote">The unexpected is part of the personality.</p><p class="body-copy">Bleeding Ink also offers novelty gift baskets. This corner of the site can feature real basket photos, current options, and how to order once the shop provides them.</p><a href="#visit" class="btn btn-outline" style="margin-top:17px">Ask about baskets ↗</a></div>
+      <div data-reveal><span class="eyebrow">Beyond the ink</span><h2 class="section-heading" id="basket-title">A little <em>extra.</em></h2><p class="lede-quote">The unexpected is part of the personality.</p><p class="body-copy">Bleeding Ink also offers novelty gift baskets. Current selections, prices, and pickup information will be shared when confirmed.</p><a href="#visit" class="btn btn-outline" style="margin-top:17px">Ask about baskets ↗</a></div>
       <div class="basket-art glass" aria-label="Decorative gothic letter B" data-reveal><span>B</span></div>
     </div>
   </section>
   <section id="book" class="booking" aria-labelledby="booking-title">
-    <div class="container"><div class="booking-box glass" data-reveal><span class="eyebrow">Make it permanent</span><h2 class="section-heading" id="booking-title">Ready to <em>leave a mark?</em></h2><p class="body-copy">Your idea deserves a real conversation. Booking details will connect directly to the shop once the official link is added.</p><div class="booking-actions">@@BOOKING_CONTROL@@<a href="#visit" class="btn btn-outline">Find the studio ↗</a></div></div></div>
+    <div class="container"><div class="booking-box glass" data-reveal><span class="eyebrow">Make it permanent</span><h2 class="section-heading" id="booking-title">Ready to <em>leave a mark?</em></h2><p class="body-copy">Your idea deserves a real conversation. Online booking isn't available on this page yet. Check back for appointment details.</p><div class="booking-actions">@@BOOKING_CONTROL@@<a href="#visit" class="btn btn-outline">Find the studio ↗</a></div></div></div>
   </section>
   @@VISIT_REVIEW_SECTIONS@@
 </main>
-<footer class="footer">
+<footer class="footer" id="contact">
   <div class="container">
     <div class="footer-top"><div><div class="footer-brand">BLEEDING <strong>INK.</strong></div><p class="footer-info" id="contactInfo">@@FOOTER_FACTS@@</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#about">Story</a><a href="#artists">Artists</a><a href="#baskets">Baskets</a><a href="#book">Book</a><a href="#reviews">Reviews</a><a href="#top">Back to top ↑</a>@@SOCIAL_LINKS@@</nav></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Bleeding Ink Tattoo &nbsp;·&nbsp; @@SITE_STATUS@@</span><span>IF YOU AIN'T TATTED YOU SCATTED</span></div>
@@ -322,7 +340,7 @@
 </footer>
 <dialog id="bookingDialog" aria-labelledby="modalTitle">
   <button id="modalClose" class="modal-close" type="button" aria-label="Close">×</button>
-  <div class="modal-content"><span class="eyebrow">Booking not yet connected</span><h2 id="modalTitle">Almost time to ink.</h2><p>This is a working design preview. Add the studio's verified booking URL to <code>studio.json</code>, then rebuild the site to activate the button.</p><button class="btn btn-outline" id="modalDone" type="button">Got it</button></div>
+  <div class="modal-content"><span class="eyebrow">Booking details coming soon</span><h2 id="modalTitle">Almost time to ink.</h2><p>Online booking is not available through this page yet. Appointment details will appear here when confirmed.</p><button class="btn btn-outline" id="modalDone" type="button">Got it</button></div>
 </dialog>
 <script>
   /* Launch configuration: fill only with verified information. No fake contacts or dead booking links. */
@@ -369,6 +387,7 @@
       root.style.setProperty('--fall',Math.max(40,s.top-n.top)+'px');
       const nx=n.left+n.width/2-p.left;splashX=p.width?nx/p.width:.85;
       const ring=document.getElementById('puddleSplash');if(ring)ring.style.left=nx+'px';
+      const td=document.querySelector('.title-drips'),ink=document.querySelector('.ink-word');if(td&&ink){td.style.left=(n.left+n.width/2-ink.getBoundingClientRect().left)+'px';}
     }
     layoutDrip();
     const ctx=canvas&&canvas.getContext('2d',{alpha:true});

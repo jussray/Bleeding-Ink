@@ -91,7 +91,8 @@ class WebsiteBuildTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('id="bookingButton"', page)
         self.assertNotIn('href="#"', page)
-        self.assertIn('studio.json', page)
+        self.assertNotIn('<code>studio.json</code>', page)
+        self.assertIn('Online booking is not available through this page yet.', page)
 
     def test_release_metadata_and_footer_use_verified_location_not_preview_claim(self):
         data = {

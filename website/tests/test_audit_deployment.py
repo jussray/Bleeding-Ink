@@ -33,6 +33,12 @@ class DeploymentAuditTests(unittest.TestCase):
         self.assertTrue(any('noindex' in error for error in errors))
         self.assertTrue(any('structured data' in error for error in errors))
 
+    def test_original_reference_photo_is_excluded_from_worker_assets(self):
+        rules = [(ROOT / '.assetsignore').read_text(encoding='utf-8').splitlines()]
+        self.assertIn('/assets/original-sign.jpg', rules[0])
+        failures, _ = module.audit()
+        self.assertFalse(any('allowlist' in error for error in failures), failures)
+
     def test_warning_does_not_claim_live_verification(self):
         report = module.markdown([], [('LIVE_RUNTIME_UNKNOWN', 'Not inspected')])
         self.assertIn('repository-only', report)
