@@ -38,3 +38,8 @@ jobs:
         run: |
           python audit_deployment.py --output "$RUNNER_TEMP/bleeding-ink-audit.md"
           cat "$RUNNER_TEMP/bleeding-ink-audit.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Observe public HTTP preview (advisory; not browser verification)
+        continue-on-error: true
+        run: |
+          python probe_public.py --output "$RUNNER_TEMP/bleeding-ink-http-observation.md"
+          cat "$RUNNER_TEMP/bleeding-ink-http-observation.md" >> "$GITHUB_STEP_SUMMARY"
