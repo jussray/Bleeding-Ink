@@ -34,3 +34,7 @@ jobs:
       - name: Generate offline listing audit
         run: |
           python audit_listings.py --output /tmp/bleeding-ink-listing-audit.md
+      - name: Audit deployment surface and record launch blockers
+        run: |
+          python audit_deployment.py --output "$RUNNER_TEMP/bleeding-ink-audit.md"
+          cat "$RUNNER_TEMP/bleeding-ink-audit.md" >> "$GITHUB_STEP_SUMMARY"
