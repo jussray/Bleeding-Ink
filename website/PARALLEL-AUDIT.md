@@ -20,7 +20,9 @@ The Johnstown Galleria currently identifies a tattoo tenant as **Galleria Ink Ta
 
 Public directories also refer to **GallaINK** and **Get Er Done Tattoo and Piercings** in the mall. These records do **not** establish that Bleeding Ink is the same business, a rebrand, an authorized storefront there, or entitled to its ratings, contact numbers, suite, or hours. Do not copy third-party listing details to the Bleeding Ink site.
 
-Release remains **BLOCKED** until a shop-authorized source confirms the current trading identity, accurate suite and hours, ownership/consent for artist content, customer contact information, the approved booking destination and review-form identity. Past user-entered figures are inputs for owner confirmation, not automatically verified platform facts. Keep blank fields and false approval flags in `studio.json` unchanged until substantiated.
+**Owner-sourced provenance update, 2026-10-29:** The user explicitly confirmed that previously supplied Bleeding Ink details came from the shop owner. Record them accurately as **owner-provided via user**: owner named **Leak**; **500 Galleria Drive**; phone **215-980-1386**; **Tuesday–Sunday 11 AM–7 PM, Monday by appointment only**. These are not fabricated guesses and should not be repeatedly re-requested. Their provenance is owner-sourced, while independent public listing verification is a different evidence plane.
+
+Release remains **BLOCKED** for the unresolved mapping between Bleeding Ink and the separately listed Galleria Ink/Get Er Done businesses, exact shop suite/legal trading identity, use-rights for artist content, approved booking destination and official review URL. Do not overwrite owner-sourced hours with third-party tenant hours. Keep `studio.json` and the false launch-approval flags unchanged until the required deployment and owner release gates are cleared.
 
 ## CI and governance
 
