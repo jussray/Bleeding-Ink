@@ -41,5 +41,12 @@ jobs:
       - name: Observe public HTTP preview (advisory; not browser verification)
         continue-on-error: true
         run: |
+          set +e
           python probe_public.py --output "$RUNNER_TEMP/bleeding-ink-http-observation.md"
-          cat "$RUNNER_TEMP/bleeding-ink-http-observation.md" >> "$GITHUB_STEP_SUMMARY"
+          probe_status=$?
+          set -e
+          cat "$RUNNER_TEMP/bleeding-ink-http-observation.md" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$probe_status" -ne 0 ]; then
+            echo "::warning::Public HTTP probe reported FAIL; see separated evidence states above"
+          fi
+          exit "$probe_status"
