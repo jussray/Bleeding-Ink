@@ -213,6 +213,12 @@
     .hero-art{left:12%;right:auto;top:7%;width:min(36%,500px)}
     .hero-title .ink-word{display:inline-block;position:relative}.hero-title .title-drips{left:50%;transform:translateX(-50%)}
     .hero-side-label{display:none}.nav-book{border-color:var(--brand)}
+    .hero-title>span{animation:lockup-rise 1.4s cubic-bezier(.2,.7,.2,1) both}
+    .hero-title>span:nth-child(2){animation-delay:.25s}
+    .hero-subtitle::before,.hero-subtitle::after{animation:rule-draw 1.2s .7s cubic-bezier(.2,.7,.2,1) both}
+    .title-drips i{animation-duration:3.65s}
+    @keyframes lockup-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+    @keyframes rule-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
     @media(max-width:760px){.hero-type{top:44%}.hero-title{font-size:clamp(64px,17vw,120px)}.hero-art{left:4%;top:10%;width:60%}.hero-subtitle{letter-spacing:.3em}}
   </style>
 </head>
@@ -398,6 +404,7 @@
       root.style.setProperty('--fall',Math.max(40,s.top-n.top)+'px');
       const nx=n.left+n.width/2-p.left;splashX=p.width?nx/p.width:.85;
       const ring=document.getElementById('puddleSplash');if(ring)ring.style.left=nx+'px';
+      const td=document.querySelector('.title-drips'),ink=document.querySelector('.ink-word');if(td&&ink){td.style.left=(n.left+n.width/2-ink.getBoundingClientRect().left)+'px';}
     }
     layoutDrip();
     const ctx=canvas&&canvas.getContext('2d',{alpha:true});
