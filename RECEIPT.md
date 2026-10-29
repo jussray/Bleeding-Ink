@@ -1,7 +1,7 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:3165c5c902c8985674ce0ad337d70ae5e0ce0fe0|subject:tattoo-shop-site/index.html|evidence:sha256=db653c3960a6e7c28521ee1b69514d2a1a8bdcf5253f20fbcaabd7ff8f43fb75|runtime:workers-build-23bdbae8-preview-failed-2026-10-28
-Proof cookie: 7aaad3cac4f7e111
+Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:2c3082b313e9d901a7a9ba1d32f45a86bd62eb29|subject:tattoo-shop-site/website/index.html|evidence:sha256=d93f29b4db31b642156e86bada6b41468eba2edbe1143e413be62bbb628b6415|runtime:github-actions-draft-preview-checks-2c3082b-success
+Proof cookie: dddf5e188ec61e77
 Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
@@ -57,3 +57,20 @@ Open
 
 Next gate: owners' answers and the booking tool link. Repo jussray/Bleeding-Ink holds a draft PR for this build (branch draft/site-v4-keyvisual). Do not merge.
 Rollback: copy /home/claude/tattoo-shop-site-pre-zip-merge-backup.html over index.html and delete assets/skeleton-machine-cutout.webp to undo this merge.
+
+## Implant 2026-10-28 (draft head 2c3082b)
+
+Fixes implanted on draft/site-v4-keyvisual (commit 2c3082b, fast-forward, not merged):
+- INK title, title drips, ink drop, needle light and header INK pinned to brand red via --brand tokens. Palette smoke still changes per drip. Sampled rgb(209,44,41) across two drip cycles (Playwright, 1440x900 and 390x844).
+- Smoke moved to one fixed page-wide layer; section backgrounds made transparent so smoke shows behind glass panels.
+- Phone hero hand moved below "Est. in ink" (overlap removed). Hand now sits partly behind the glass card.
+- website/index.html regenerated with build.py. 22 unit tests pass. CI cmp matches. Preview check: success on 2c3082b.
+- Playwright: no horizontal overflow at either width. Only console errors are blocked Google Fonts requests.
+
+Not verified from this sandbox:
+- Public exposure on GitHub Pages and the Worker is NOT re-checked. Egress to jussray.github.io returned 403 (CONNECT tunnel failed), and the Pages API is not permitted through the proxy.
+- The Pages exclusion in _config.yml (commit 81cb4b7, on this branch) only takes effect after this branch is merged to whatever branch Pages builds from. That branch is unconfirmed.
+- Google Fonts (Pirata One, Cinzel, DM Sans) not rendered.
+
+Still open: owner facts, photo rights, trademark check, Logpush, live rollback target. PR #3 mixes Worker config and site design; consider splitting before merge.
+Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 2c3082b".
