@@ -1,7 +1,7 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:8b3f0b9a0d8b96bc36449396219a528d99df8592|subject:tattoo-shop-site/website/index.html|evidence:sha256=3da3a67539a25731b45428c14e92aadbecae830676c8e83dfcc39e25762447a1|runtime:tap-drip-puddle-playwright-desktop-mobile
-Proof cookie: 0d85c14a4e797386
+Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:b1cf1ee72a309ca601934dd094325e0a8b6e625e|subject:tattoo-shop-site/website/index.html|evidence:sha256=f8832c586e5a1b25bde868f91f8f7b95243e0773e4c4cc70a0d0ca51209937b3|runtime:parallax-glass-playwright-desktop-mobile-reduced
+Proof cookie: 6bba3a0d865dd7cd
 Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
@@ -84,3 +84,13 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 2c3082b".
 
 Not verified: jussco motion and glass match. The jussray/jussray repo is not attached to this session, so its motion source could not be read. Needs attach before that part can be matched.
 Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 8b3f0b9".
+
+## Implant 2026-10-29 (draft head b1cf1ee): hero parallax and neutral glass
+
+- Jussco motion read from the public repo jussray/jussray (read-only shallow clone, commit f4448d0, site/index.html). Taken: the hero scroll parallax (background moves 0.25x scroll, capped at 800px) and the card glass recipe (translucent top-to-bottom gradient, 1px border, inset top highlight, deep shadow, blur). Not taken: the violet and cyan palette, starfield, nav highlight and staged step timers.
+- Glass tints are neutral white and black so the page stays pure black with colour only from the drip and smoke. Blur is 12px, the value jussco uses on its sticky header.
+- Hero content and puddle move together on scroll, so the drip still lands on the surface. Needle-to-surface gap unchanged before and after scroll: 104.6px desktop, 129.3px phone.
+- Playwright (desktop 1440x900, mobile 390x844, reduced motion): no page errors, no horizontal overflow, body rgb(0, 0, 0), glass backdrop blur(12px). Reduced motion leaves the transforms unset.
+- Build: website/index.html regenerated with build.py; 22 unit tests pass; CI-style cmp matches.
+Not verified: the preview check on b1cf1ee, and mergeable state at this head (last gh check was clean at 5be9e41).
+Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head b1cf1ee".
