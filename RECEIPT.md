@@ -1,7 +1,7 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:60194fc0422f99a064ce9c662960842f0ae1ac20|subject:tattoo-shop-site/website/index.html|evidence:sha256=5a6b6e0b55d768354247a7f983409fd80c095518879582eba35b46f600a1fd8e|runtime:alt-text-playwright-desktop-mobile-reduced
-Proof cookie: 188d32b40812707d
+Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:b02e6adb62842dc5df667e70a08a280521f3c17f|subject:tattoo-shop-site/website/index.html|evidence:sha256=dc2112aa4e35826c3312ec8fcc5b150fa8961e2a17b33bbeec90710e9035a72a|runtime:glass-translucent-playwright-desktop-mobile-reduced
+Proof cookie: 58f752b675bc6833
 Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
@@ -110,3 +110,10 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 66d9b7e".
 - website/index.html regenerated; 22 unit tests pass; CI-style cmp matches.
 Not verified: the preview check on this head.
 Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 60194fc0422f99a064ce9c662960842f0ae1ac20".
+
+## Implant 2026-10-29 (draft head b02e6ad): translucent glass
+
+- Glass box fill lowered from 0.72 to 0.30 black at the bottom, and from 0.06 to 0.03 white at the top. Applies to every .glass box (hero card, features, artist panel, basket art, booking box).
+- Playwright (desktop 1440x900, mobile 390x844, reduced motion): no page errors, computed glass background matches the new values.
+Not verified: the preview check on this head.
+Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head b02e6adb62842dc5df667e70a08a280521f3c17f".
