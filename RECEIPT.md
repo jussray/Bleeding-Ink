@@ -1,8 +1,8 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-live-audit-images|head:ab97abe5927565c8b2be07a02d4cb5bc93b0d4c9|subject:tattoo-shop-site/website/index.html|evidence:sha256=0a82e333c1116f75888f03049eb07e87c96831d5e600631a2f959b4103f7bc28|runtime:live-audit-fixes-playwright-desktop-mobile
-Proof cookie: bc26300167983eab
-Scope: draft only. Draft PR #8 on branch fix/bleeding-ink-live-audit-images (PR #7 merged at e9604d7). No merge, no production deploy, no publish by this receipt.
+Fingerprint: repo:jussray/Bleeding-Ink|branch:fix/bleeding-ink-welcome-motion|head:90a47e9609fc96b3afc435d2c06cf70ad16de6ae|subject:tattoo-shop-site/website/index.html|evidence:sha256=989a9b03ac76f79eebd851feeeb212d40df582d09c03323562d6499e2b961c9c|runtime:welcome-motion-playwright-desktop-mobile-reduced
+Proof cookie: 6dba6c7c1b25c036
+Scope: draft only. Draft PR on branch fix/bleeding-ink-welcome-motion (PR #8 merged at 444cbfd). No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
 - Workers build 23bdbae8 (draft branch, commit 3165c5c) failed. Cause: the non-main build ran `npx wrangler preview`, and Wrangler stopped with "Your Wrangler configuration needs a `previews` block". The failed step was the preview deploy, so nothing was published.
@@ -147,3 +147,12 @@ Merge: not approved. Needs exact approval, e.g. "Merge PR #7 at head 92388b46a6b
 Not verified: the wrangler upload with the new .assetsignore rule; the preview check on this head; image rights for all three photos.
 Not changed: root img/ and root robots/sitemap/llms drafts with placeholders; cache on the bare live URL.
 Merge: not approved. Needs exact approval, e.g. "Merge PR #8 at head <final head>".
+
+## Implant 2026-10-28 (branch fix/bleeding-ink-welcome-motion, head 90a47e9): welcome motion
+
+- Drip stream under INK is positioned on the machine tip's x (computed in layoutDrip), so each drop lands on the stream and the splash ring.
+- Title drips pulse on the 3.65s tap cycle.
+- One-time intro: lockup rises in, rules draw out. Reduced motion disables it.
+- 24 unit tests pass from website/; CI-style cmp matches; Playwright desktop, mobile, reduced motion: drip x equals needle x (622px and 216px), no page errors, no horizontal scroll.
+Not verified: the preview check on this head; the hand-tap moves the tip by a few px during its 146ms tap.
+Merge: not approved. Needs exact approval, e.g. "Merge PR at head <final head>".
