@@ -1,7 +1,7 @@
 # Handoff receipt: Bleeding Ink Tattoo site draft
 
-Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:2c3082b313e9d901a7a9ba1d32f45a86bd62eb29|subject:tattoo-shop-site/website/index.html|evidence:sha256=d93f29b4db31b642156e86bada6b41468eba2edbe1143e413be62bbb628b6415|runtime:github-actions-draft-preview-checks-2c3082b-success
-Proof cookie: dddf5e188ec61e77
+Fingerprint: repo:jussray/Bleeding-Ink|branch:draft/site-v4-keyvisual|head:8b3f0b9a0d8b96bc36449396219a528d99df8592|subject:tattoo-shop-site/website/index.html|evidence:sha256=3da3a67539a25731b45428c14e92aadbecae830676c8e83dfcc39e25762447a1|runtime:tap-drip-puddle-playwright-desktop-mobile
+Proof cookie: 0d85c14a4e797386
 Scope: draft only. Draft PR #3 on branch draft/site-v4-keyvisual. No merge, no production deploy, no publish by this receipt.
 
 Build status (2026-10-28)
@@ -74,3 +74,13 @@ Not verified from this sandbox:
 
 Still open: owner facts, photo rights, trademark check, Logpush, live rollback target. PR #3 mixes Worker config and site design; consider splitting before merge.
 Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 2c3082b".
+
+## Implant 2026-10-28 (draft head 8b3f0b9): tap-drip puddle
+
+- Hand taps and each tap releases an ink drip into a smoke puddle at the bottom of the hero. Drip, needle glow, splash ring and puddle smoke change colour together per drip. INK title stays brand red.
+- Background pure black. Grain, grid, page-wide smoke, tone picker and decorative colour glows removed.
+- Playwright 1440x900 and 390x844: no page errors; INK stays rgb(209,44,41) across 9 seconds; drip colour advances across palette. Desktop needle-to-surface fall 105px.
+- Phone: the glass hero card sits over the needle and drip. Not fixed; trade-off.
+
+Not verified: jussco motion and glass match. The jussray/jussray repo is not attached to this session, so its motion source could not be read. Needs attach before that part can be matched.
+Merge: not approved. Needs exact approval, e.g. "Merge PR #3 at head 8b3f0b9".
