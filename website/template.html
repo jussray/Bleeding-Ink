@@ -38,7 +38,7 @@
     .btn-red:hover{box-shadow:0 12px 52px rgba(var(--accent-rgb),.4)}
     .btn-outline{border-color:rgba(234,206,167,.45);background:rgba(8,7,7,.25);color:var(--ink)}
     .btn-outline:hover{background:rgba(226,197,161,.12);border-color:var(--bone)}
-    .glass{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.3));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+    .glass{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.12));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 20px 50px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
     .glass::before{content:"";position:absolute;inset:1px;pointer-events:none;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.09),transparent 18%,transparent 70%,rgba(255,255,255,.04));mask-image:linear-gradient(#000,transparent 60%);z-index:-1}
     /* Header */
     .header{position:absolute;z-index:30;top:0;left:0;right:0;border-bottom:1px solid rgba(242,215,181,.11)}
@@ -202,6 +202,18 @@
     @media(max-width:400px){.hero-title{font-size:17.3vw}.hero-art{top:39%;right:-9%;width:58%}.hero-info{bottom:65px}.hero-info .hero-info-header{padding-bottom:8px}.hero-info h2{font-size:29px}.hero-info p{font-size:11px}.hero-actions .btn{font-size:8px;padding:13px 11px}.hero-footer{height:40px}}
     @media(max-width:760px){.puddle{height:22%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;transform:none}.puddle .smoke-canvas{filter:blur(18px)}.ink-drop{opacity:0}.puddle-splash{display:none}}
+      /* Welcome page (mock 2026-10-28): hand upper-left, centred lockup, drip falls through the logo into the puddle */
+    .hero-kicker{display:none}
+    .hero-type{top:30%;left:0;right:0;width:auto;text-align:center}
+    .hero-title{margin:0 auto}
+    .hero-title span{display:block}
+    .hero-subtitle{margin:22px auto 0;display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,26px);letter-spacing:.5em;text-transform:uppercase}
+    .hero-subtitle::before,.hero-subtitle::after{content:"";width:clamp(48px,10vw,150px);height:1px;background:rgba(230,206,170,.55)}
+    .hero-info{display:none}
+    .hero-art{left:12%;right:auto;top:7%;width:min(36%,500px)}
+    .hero-title .ink-word{display:inline-block;position:relative}.hero-title .title-drips{left:50%;transform:translateX(-50%)}
+    .hero-side-label{display:none}.nav-book{border-color:var(--brand)}
+    @media(max-width:760px){.hero-type{top:44%}.hero-title{font-size:clamp(64px,17vw,120px)}.hero-art{left:4%;top:10%;width:60%}.hero-subtitle{letter-spacing:.3em}}
   </style>
 </head>
 <body>
@@ -212,13 +224,13 @@
       <span class="wordmark-text">BLEEDING <b>INK</b></span>
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#about">The story</a><a href="#experience">Experience</a><a href="#artists">Artists</a><a href="#baskets">Baskets</a><a href="#visit">Visit</a><a href="#reviews">Reviews</a>
+      <a href="#top">Home</a><a href="#about">About</a><a href="#artists">Gallery</a><a href="#book">Book</a><a href="#contact">Contact</a>
     </nav>
-    <a class="nav-book" href="#book">Book a session ↗</a>
+    <a class="nav-book" href="#book">Book now ↗</a>
     <button class="mobile-menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu ☰</button>
   </div>
   <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#about">The story</a><a href="#experience">Experience</a><a href="#artists">Artists</a><a href="#baskets">Baskets</a><a href="#visit">Visit</a><a href="#reviews">Reviews</a><a href="#book">Book</a>
+    <a href="#top">Home</a><a href="#about">About</a><a href="#artists">Gallery</a><a href="#book">Book</a><a href="#contact">Contact</a>
   </nav>
 </header>
 <main id="top">
@@ -229,7 +241,7 @@
       <div class="hero-type">
         <p class="hero-kicker">Art with a darker pulse</p>
         <h1 class="hero-title" id="hero-title"><span>BLEEDING</span><span class="ink-word">INK<span class="title-drips" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span></h1>
-        <p class="hero-subtitle">Tattoo studio&nbsp; / &nbsp;Est. in ink</p>
+        <p class="hero-subtitle">Tattoo studio</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <img src="assets/skeleton-hand.webp" alt="" fetchpriority="high" width="582" height="698">
@@ -314,7 +326,7 @@
   </section>
   @@VISIT_REVIEW_SECTIONS@@
 </main>
-<footer class="footer">
+<footer class="footer" id="contact">
   <div class="container">
     <div class="footer-top"><div><div class="footer-brand">BLEEDING <strong>INK.</strong></div><p class="footer-info" id="contactInfo">@@FOOTER_FACTS@@</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="#about">Story</a><a href="#artists">Artists</a><a href="#baskets">Baskets</a><a href="#book">Book</a><a href="#reviews">Reviews</a><a href="#top">Back to top ↑</a>@@SOCIAL_LINKS@@</nav></div>
     <div class="footer-bottom"><span>© <span id="year"></span> Bleeding Ink Tattoo &nbsp;·&nbsp; @@SITE_STATUS@@</span><span>IF YOU AIN'T TATTED YOU SCATTED</span></div>
