@@ -91,7 +91,7 @@ def render_review(data):
     if review_url:
         review_button = anchor(review_url, 'Leave an honest Google review ↗', 'btn btn-red')
     else:
-        review_button = '<p class="pending">The studio's official review link isn't available here yet.</p>'
+        review_button = """<p class="pending">The studio's official review link isn't available here yet.</p>"""
     read_button = anchor(maps_url, 'Read public reviews ↗', 'btn btn-outline') if maps_url else ''
     return ('''<article class="local-panel glass" id="reviews" aria-labelledby="reviews-title">
         <span class="micro">Real experiences only</span><h3 id="reviews-title">Your voice matters.</h3>
