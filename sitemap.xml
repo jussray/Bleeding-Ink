@@ -2,7 +2,7 @@
 <!-- DRAFT. Replace [domain] at launch. Add a URL for each new page. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://[domain]/</loc>
+    <loc>https://bleeding-ink.mcgill-raylene.workers.dev/</loc>
     <lastmod>2026-10-28</lastmod>
   </url>
 </urlset>

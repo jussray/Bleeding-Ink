@@ -4,11 +4,11 @@
 
 ## Key pages
 
-- [Home](https://[domain]/): Artists, how to book, baskets, visit details, and FAQ
-- [Booking](https://[domain]/#book): How to book a tattoo, deposit, walk-ins, and cancellation policy
-- [Baskets](https://[domain]/#baskets): Novelty gift baskets, pickup, and lead time
-- [Visit](https://[domain]/#visit): Address, hours, and phone
-- [FAQ](https://[domain]/#faq): Common questions about booking, pricing, minors, and baskets
+- [Home](https://bleeding-ink.mcgill-raylene.workers.dev/): Artists, how to book, baskets, visit details, and FAQ
+- [Booking](https://bleeding-ink.mcgill-raylene.workers.dev/#book): How to book a tattoo, deposit, walk-ins, and cancellation policy
+- [Baskets](https://bleeding-ink.mcgill-raylene.workers.dev/#baskets): Novelty gift baskets, pickup, and lead time
+- [Visit](https://bleeding-ink.mcgill-raylene.workers.dev/#visit): Address, hours, and phone
+- [FAQ](https://bleeding-ink.mcgill-raylene.workers.dev/#faq): Common questions about booking, pricing, minors, and baskets
 
 ## Facts
 
@@ -16,7 +16,7 @@
 - Services: custom tattoos; novelty gift baskets
 - Address: [street, city, state, ZIP]
 - Phone: [phone]
-- Hours: [days and times]
+- Hours: Tuesday–Sunday 11 AM–7 PM; Monday by appointment only
 - Booking: [booking tool]
 - Instagram: [handle]
 - Last updated: 2026-10-28

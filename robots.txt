@@ -37,4 +37,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://[domain]/sitemap.xml
+Sitemap: https://bleeding-ink.mcgill-raylene.workers.dev/sitemap.xml
